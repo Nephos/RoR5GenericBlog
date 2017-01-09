@@ -63,3 +63,8 @@ gem "slim"
 
 ## CSS
 gem 'twitter-bootstrap-rails', '>= 2.2.6'
+gem 'will_paginate-bootstrap'
+
+## Other
+gem 'will_paginate', github: 'jonatack/will_paginate'
+#gem 'will_paginate'
