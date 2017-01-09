@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  get 'home/index'
-  get '/read/:id' => 'home#show'
+  get 'home/index', as: :home
+  get '/read/:id' => 'home#show', as: :read
 
   resources :posts
 

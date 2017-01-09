@@ -8,7 +8,11 @@ class Post < ApplicationRecord
   end
 
   def to_html
-    self.description
+    MARKDOWN.render(self.description).html_safe
+  end
+
+  def to_short_html
+    MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first).html_safe
   end
 
 end

@@ -59,7 +59,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 ## Templating
-gem "slim"
+gem 'slim'
+gem 'redcarpet'
 
 ## CSS
 gem 'twitter-bootstrap-rails', '>= 2.2.6'
