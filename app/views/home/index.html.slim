@@ -1,5 +1,5 @@
 h1 My Blog
 - @posts.each do |post|
-  h2= post.title
-  span= post.words
-  p= post.description
+  h2.post-title= post.title
+  span.post-words= post.words
+  .post-description= post.description[0..200]

@@ -23,6 +23,9 @@ html[lang="en"]
           span.icon-bar
         a.navbar-brand[href="/"]
           | Blog
+        - if user_signed_in?
+          a.navbar-brand[href="/posts"]
+            | Posts
         / .navbar-collapse.collapse.navbar-responsive-collapse
         /   ul.nav.navbar-nav
         /     li
