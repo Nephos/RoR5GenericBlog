@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index', as: :home
   get '/read/:id' => 'home#show', as: :read
+  get '/last' => 'home#last', as: :last
   patch '/update/:id' => 'home#update', as: :update
 
   resources :posts

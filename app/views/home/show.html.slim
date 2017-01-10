@@ -1,4 +1,5 @@
 .row.post
+  = render partial: "home/edit_button"
   .post-id[id=@post.id]
   .row
     .post-title
@@ -10,7 +11,4 @@
   .row
     .post-description
       div= @post.to_html
-  .row
-    - if user_signed_in?
-      .post-edit
-        a.btn.btn-default.btn-xs[href=edit_post_path(@post) data-turbolinks="false"] edit
+  = render partial: "home/edit_button"
