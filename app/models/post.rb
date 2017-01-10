@@ -19,4 +19,8 @@ class Post < ApplicationRecord
     (words / 300.0).ceil
   end
 
+  def date
+    [updated_at != created_at ? :'updated at' : :'created at', updated_at.strftime("%d/%m/%Y %H:%M")]
+  end
+
 end

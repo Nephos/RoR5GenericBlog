@@ -9,12 +9,21 @@
 .post-title {
 }
 
+.post-meta {
+}
+
 .post-words {
     color: grey;
+    float: left;
 }
 
 .post-words:after {
     content: " reading";
+}
+
+.post-date {
+    color: grey;
+    float: right;
 }
 
 .post-description {
