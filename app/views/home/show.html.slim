@@ -1,5 +1,5 @@
 h1.post-title= @post.title
 span.small.post-meta
-  span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? ?s : nil}"
-  span.post-date= post.date.join(" ")
+  span.post-words= "~ #{@post.duration} minute#{@post.duration > 1 ? ?s : nil}"
+  span.post-date= @post.date.join(" ")
 .post-description= @post.to_html
