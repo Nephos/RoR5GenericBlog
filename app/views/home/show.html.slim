@@ -1,3 +1,3 @@
-h2.post-title= @post.title
-span.post-words= @post.words
+h1.post-title= @post.title
+span.post-words= "~ #{@post.duration} minute#{@post.duration > 1 ? ?s : nil}"
 .post-description= @post.to_html

@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+    margin: 0px 0px 40px 0px;
+}
+
+.post-title {
+}
+
+.post-words {
+    color: grey;
+}
+
+.post-words:after {
+    content: " reading";
+}
+
+.post-description {
+}
+
+.post-more {
+}

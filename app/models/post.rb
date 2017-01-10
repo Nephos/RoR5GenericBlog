@@ -15,4 +15,8 @@ class Post < ApplicationRecord
     MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first).html_safe
   end
 
+  def duration
+    (words / 300.0).ceil
+  end
+
 end

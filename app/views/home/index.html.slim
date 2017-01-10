@@ -1,7 +1,10 @@
-h1 My Blog
 - @posts.each do |post|
-  h2.post-title= post.title
-  span.post-words= post.words
-  .post-description= post.to_short_html
-  a.post-more[href=read_path(post)] read more
+  .row.post
+    h1.post-title= post.title
+    span.small.post-words= "~ #{post.duration} minute#{post.duration > 1 ? ?s : nil}"
+    .container-fluid
+      .post-description= post.to_short_html
+      .btn.btn-default.btn-xs
+        a.post-more[href=read_path(post)] read more
 
+= will_paginate @posts
