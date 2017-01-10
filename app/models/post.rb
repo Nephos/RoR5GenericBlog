@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   before_save do
     self.words = self.description.split(/[[:alnum:]]+/).size
+    self.description = self.description.to_s
   end
 
   def to_html
