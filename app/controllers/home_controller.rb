@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_action :set_posts, only: [:index, :show, :last]
 
   def index
-    @posts = @posts.paginate(page: params[:page]).order(created_at: :desc)
+    @posts = @posts.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
   end
 
   def show

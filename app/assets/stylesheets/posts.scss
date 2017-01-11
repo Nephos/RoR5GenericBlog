@@ -2,17 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.post-index {
+    max-width: 600px;
+}
+
 .post {
     margin: 0px 0px 60px 0px;
-    max-width: 600px;
     word-wrap: break-word;
     padding-bottom: 60px;
     border-bottom: 1px solid #eee;
 }
 
 .post-title {
+    font-size: 24px;
 }
 
+.post-state {
+    color: grey !important;
+    font-size: 16px;
+}
 
 .post-title a {
     background-color: inherit;

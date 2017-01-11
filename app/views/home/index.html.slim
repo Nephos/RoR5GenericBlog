@@ -1,21 +1,22 @@
-- if user_signed_in?
-  = link_to "New post", create_path, method: "post", class: "btn btn-success"
+.post-index
+  - if user_signed_in?
+    = link_to "Create a new post", create_path, method: "post", class: "btn btn-success btn-sm center-block"
 
-= will_paginate @posts
+  = will_paginate @posts
 
-- @posts.each do |post|
-  .row
-    .post
-      .post-id[id=post.id]
-      h1.post-title
-        = link_to "[#{post.state}] ", publish_path(post), method: "PATCH" if post.state == "draft"
-        = link_to post.title, read_path(post)
-      span.small.post-meta
-        span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? 's' : ''}"
-        span.post-date= post.date.join(" ")
-      .container-fluid
-        .post-description= post.to_short_html
-        - if post.to_html.size > post.to_short_html.size
-          a.post-more[href=read_path(post)] read more
+  - @posts.each do |post|
+    .row
+      .post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
+        .post-id[id=post.id]
+        h1.post-title
+          = link_to post.title, read_path(post)
+          = link_to " [#{post.state}] ", publish_path(post), method: "PATCH", class: "post-state post-draft" if post.state == "draft"
+        span.small.post-meta
+          span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? 's' : ''}"
+          span.post-date= post.date.join(" ")
+        .container-fluid
+          .post-description= post.to_short_html
+          - if post.to_html.size > post.to_short_html.size
+            a.post-more[href=read_path(post)] read more
 
-= will_paginate @posts
+  = will_paginate @posts
