@@ -30,4 +30,4 @@ html[lang="en"]
               div= ENV["BLOG_SIDEBAR"].to_s.html_safe
 
       footer
-        p= ENV["BLOG_FOOTER"]
+        p= ENV["BLOG_FOOTER"].to_s.html_safe
