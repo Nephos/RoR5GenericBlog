@@ -11,13 +11,13 @@ class HomeController < ApplicationController
   end
 
   def last
-    redirect_to read_url(Post.last)
+    redirect_to read_path(Post.last)
   end
 
   def update
     @post = Post.find params[:id]
     if @post.update(post_params)
-      render :show, status: :ok, location: read_url(@post)
+      render :show, status: :ok, location: read_path(@post)
     else
       render json: @post.errors, status: :unprocessable_entity
     end

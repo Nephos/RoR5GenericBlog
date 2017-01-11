@@ -4,10 +4,10 @@
       span.icon-bar
       span.icon-bar
       span.icon-bar
-    a.navbar-brand[href=root_url]= ENV["BLOG_TITLE"]
+    a.navbar-brand[href=root_path]= ENV["BLOG_TITLE"]
     .navbar-collapse.collapse.navbar-responsive-collapse
       ul.nav.navbar-nav
-        li = link_to "Home", root_url
-        li = link_to "Last post", last_url
+        li = link_to "Home", root_path
+        li = link_to "Last post", last_path
         - if user_signed_in?
-          li = link_to "Posts", posts_url
+          li = link_to "Posts", posts_path
