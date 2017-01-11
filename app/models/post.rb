@@ -4,8 +4,8 @@ class Post < ApplicationRecord
   scope :draft, -> { where(state: "draft") }
 
   before_save do
-    self.words = self.description.split(/[[:alnum:]]+/).size
     self.description = self.description.to_s
+    self.words = self.description.split(/[[:alnum:]]+/).size
   end
 
   def to_html
@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   end
 
   def to_short_html
-    MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first).html_safe
+    MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first.to_s).html_safe
   end
 
   def duration

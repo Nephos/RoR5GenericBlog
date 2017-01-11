@@ -2,3 +2,6 @@
   .row
     .post-edit
       a.btn.btn-default.btn-xs[href=edit_post_path(@post) data-turbolinks="false"] edit
+    .post-destroy
+      = link_to "destroy", destroy_path(@post), method: "DELETE", class: "btn btn-danger btn-xs"
+      / a.btn.btn-danger.btn-xs[href=edit_post_path(@post) data-turbolinks="false"] destroy

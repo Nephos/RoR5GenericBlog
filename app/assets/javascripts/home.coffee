@@ -42,4 +42,3 @@ textarea_resize = (el) ->
 
 $ ->
   enable_edition_mode()
-

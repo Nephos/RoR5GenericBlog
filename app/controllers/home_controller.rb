@@ -1,24 +1,21 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :last]
+  before_action :set_posts, only: [:index, :show, :last]
 
   def index
-    if user_signed_in?
-      @posts = Post.all.paginate(page: params[:page]).order(created_at: :desc)
-    else
-      @posts = Post.published.paginate(page: params[:page]).order(created_at: :desc)
-    end
+    @posts = @posts.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   def show
-    @post = Post.published.find_by(id: params[:id])
+    @post = @posts.find_by(id: params[:id])
     render file: "#{Rails.root}/public/404.html" , status: 404  if @post.nil?
   end
 
   def last
-    if Post.count.zero?
+    if @posts.count.zero?
       redirect_to root_path
     else
-      redirect_to read_path(Post.last)
+      redirect_to read_path(@posts.last)
     end
   end
 
@@ -31,8 +28,25 @@ class HomeController < ApplicationController
     end
   end
 
+  def create
+    Post.create(title: "new", state: "draft")
+    redirect_to :back
+  end
+
+  def destroy
+    if Post.find(params[:id]).destroy
+      redirect_to root_path
+    else
+      redirect_to read_path(@post)
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :description, :state)
+  end
+
+  def set_posts
+    @posts = user_signed_in? ? Post.all : Post.published
   end
 end
