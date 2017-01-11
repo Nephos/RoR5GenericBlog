@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   patch '/update/:id' => 'home#update', as: :update
   post '/create' => 'home#create', as: :create
   delete '/destroy/:id' => 'home#destroy', as: :destroy
+  patch '/publish/:id' => 'home#publish', as: :publish
 
   resources :posts
 

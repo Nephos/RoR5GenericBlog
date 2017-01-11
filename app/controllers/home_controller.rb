@@ -41,6 +41,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def publish
+    Post.find(params[:id]).update_attributes(state: "published")
+    redirect_to root_path
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :description, :state)

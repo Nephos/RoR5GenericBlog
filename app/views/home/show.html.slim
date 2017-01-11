@@ -12,3 +12,6 @@
     .post-description
       div= @post.to_html
   = render partial: "home/edit_button"
+  - if user_signed_in?
+    = link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_post_path(@post), :class => 'btn btn-default'
