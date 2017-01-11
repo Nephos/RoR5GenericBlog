@@ -2,7 +2,11 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :last]
 
   def index
-    @posts = Post.published.paginate(page: params[:page]).order(created_at: :desc)
+    if user_signed_in?
+      @posts = Post.all.paginate(page: params[:page]).order(created_at: :desc)
+    else
+      @posts = Post.published.paginate(page: params[:page]).order(created_at: :desc)
+    end
   end
 
   def show
@@ -11,7 +15,11 @@ class HomeController < ApplicationController
   end
 
   def last
-    redirect_to read_path(Post.last)
+    if Post.count.zero?
+      redirect_to root_path
+    else
+      redirect_to read_path(Post.last)
+    end
   end
 
   def update
