@@ -5,7 +5,7 @@ html[lang="en"]
     meta[http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
-      = content_for?(:title) ? yield(:title) : "BlogTitle"
+      = content_for?(:title) ? yield(:title) : ENV["BLOG_TITLE"]
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -23,15 +23,11 @@ html[lang="en"]
           = yield
         .col-lg-3
           .well.sidebar-nav
-            h3
-              | BlogTitle
+            h3= ENV["BLOG_TITLE"]
             .nav
-              p
-                | This is full of informations
-            / ul.nav.nav-list
-            /   li.nav-header
-            /     | Informations
+              - if ENV["BLOG_PICTURE"]
+                img.img-thumbnail[src=ENV["BLOG_PICTURE"] alt="blog picture"]
+              div= ENV["BLOG_SIDEBAR"].to_s.html_safe
 
       footer
-        p
-          | © Nephos 2017
+        p= ENV["BLOG_FOOTER"]
