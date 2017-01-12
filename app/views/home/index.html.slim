@@ -2,7 +2,7 @@
   - if user_signed_in?
     = link_to "Create a new post", create_path, method: "post", class: "btn btn-success btn-sm center-block"
 
-  = will_paginate @posts
+  = will_paginate @posts, renderer: BootstrapPagination::Rails
 
   - @posts.each do |post|
     .row
@@ -20,4 +20,4 @@
           - if post.to_html.size > post.to_short_html.size
             a.post-more[href=read_path(post)] read more
 
-  = will_paginate @posts
+  = will_paginate @posts, renderer: BootstrapPagination::Rails
