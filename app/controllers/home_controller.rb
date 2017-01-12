@@ -18,7 +18,7 @@ class HomeController < ApplicationController
     if @posts.count.zero?
       redirect_to home_path, alert: "No readable post"
     else
-      redirect_to read_path(@posts.last)
+      redirect_to read_path(@posts.order(created_at: :desc).last)
     end
   end
 

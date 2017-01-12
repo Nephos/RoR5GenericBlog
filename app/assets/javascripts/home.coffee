@@ -30,7 +30,7 @@ enable_edition_mode = ->
       description = $(".post-description textarea").val()
       tag_list = $(".post-tags input").val()
       update_post id, title, description, tag_list, (data_post) ->
-        $(".post-title").html("<h1>" + data_post.title + "</h1>")
+        $(".post-title").html("<h1 class=\"post-title\">" + data_post.title + "</h1>")
         $(".post-description").html("<div>" + data_post.to_html + "</div>")
         build_tag_html = (tag) ->
           "<a class=\"label label-default\" href=\"/?tag=#{tag}\">#{tag}</a>"
