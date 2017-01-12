@@ -16,7 +16,7 @@ class HomeController < ApplicationController
 
   def last
     if @posts.count.zero?
-      redirect_to root_path
+      redirect_to home_path, alert: "No readable post"
     else
       redirect_to read_path(@posts.last)
     end
@@ -38,7 +38,7 @@ class HomeController < ApplicationController
 
   def destroy
     if Post.find(params[:id]).destroy
-      redirect_to root_path
+      redirect_to home_path
     else
       redirect_to read_path(@post)
     end
@@ -46,7 +46,7 @@ class HomeController < ApplicationController
 
   def publish
     Post.find(params[:id]).update_attributes(state: "published")
-    redirect_to root_path
+    redirect_to home_path
   end
 
   private
