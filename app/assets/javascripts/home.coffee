@@ -21,10 +21,9 @@ enable_edition_mode = ->
         $(".post-title input").val(data_post.title)
         $(".post-tags").html('<input class="form-control" value=""></input>')
         $(".post-tags input").val(data_post.tag_list)
-        $(".post-description").html('<textarea id=textarea class="form-control"></textarea>')
+        $(".post-description").html('<textarea id=textarea class="form-control textarea_resize"></textarea>')
         $(".post-description textarea").val(data_post.description)
-        $('.post-description textarea').keydown (ev) -> textarea_resize(ev.target)
-        textarea_resize($('.post-description textarea')[0])
+        textarea_resize('textarea.textarea_resize')
         document.edition = true
     else
       title = $(".post-title input").val()
@@ -37,14 +36,6 @@ enable_edition_mode = ->
           "<a class=\"label label-default\" href=\"/?tag=#{tag}\">#{tag}</a>"
         $(".post-tags").html(data_post.tags.map((t) -> build_tag_html(t)).join(" "))
         document.edition = false
-
-textarea_resize = (el) ->
-  $('textarea').each( ->
-    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;')
-  ).on('input', ->
-    this.style.height = 'auto'
-    this.style.height = (this.scrollHeight) + 'px'
-  )
 
 $ ->
   enable_edition_mode()
