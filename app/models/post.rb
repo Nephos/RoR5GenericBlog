@@ -4,10 +4,15 @@ class Post < ApplicationRecord
   scope :published, -> { where(state: "published") }
   scope :draft, -> { where(state: "draft") }
 
+  DEFAULT_STATE = "draft"
+  STATES = %(draft published)
   before_save do
     self.description = self.description.to_s
     self.words = self.description.split(/[[:alnum:]]+/).size
     self.tag_list = self.tag_list.map &:downcase
+    unless STATES.include? self.state
+      self.state = DEFAULT_STATE
+    end
   end
 
   def to_html
