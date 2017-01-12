@@ -22,4 +22,12 @@ body {
     body {
         padding-top: 40px;
     }
+
+    .well {
+        display: none !important;
+    }
+
+    .sidebar-nav {
+        display: none !important;
+    }
 }

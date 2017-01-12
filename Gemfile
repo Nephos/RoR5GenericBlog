@@ -70,3 +70,6 @@ gem 'will_paginate-bootstrap'
 ## Other
 gem 'will_paginate', github: 'jonatack/will_paginate'
 #gem 'will_paginate'
+
+## Tags for posts
+gem 'acts-as-taggable-on', '~> 4.0'

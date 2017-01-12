@@ -4,6 +4,9 @@ class HomeController < ApplicationController
 
   def index
     @posts = @posts.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    if params[:tag]
+      @posts = @posts.tagged_with([params[:tag]], any: true)
+    end
   end
 
   def show

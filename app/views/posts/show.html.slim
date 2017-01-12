@@ -27,6 +27,12 @@ dl.dl-horizontal
       | :
   dd
     = @post.state
+  dt
+    strong
+      = model_class.human_attribute_name(:tag_list)
+      | :
+  dd
+    = @post.tag_list
 = link_to t('.back', :default => t("helpers.links.back")),
               posts_path, :class => 'btn btn-default'
 = link_to t('.edit', :default => t("helpers.links.edit")),

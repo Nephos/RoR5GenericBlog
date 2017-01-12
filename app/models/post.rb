@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_taggable
 
   scope :published, -> { where(state: "published") }
   scope :draft, -> { where(state: "draft") }

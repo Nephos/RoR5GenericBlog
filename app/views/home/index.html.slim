@@ -16,6 +16,7 @@
           span.post-date= post.date.join(" ")
         .container-fluid
           .post-description= post.to_short_html
+          .post-tags= tag_list_links post
           - if post.to_html.size > post.to_short_html.size
             a.post-more[href=read_path(post)] read more
 
