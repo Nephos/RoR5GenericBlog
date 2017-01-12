@@ -13,6 +13,3 @@
       div= @post.to_html
     .post-tags= tag_list_links @post
   = render partial: "home/edit_button"
-  - if user_signed_in?
-    = link_to t('.edit', :default => t("helpers.links.edit")),
-                  edit_post_path(@post), :class => 'btn btn-default'

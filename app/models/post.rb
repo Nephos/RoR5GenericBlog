@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   before_save do
     self.description = self.description.to_s
     self.words = self.description.split(/[[:alnum:]]+/).size
+    self.tag_list = self.tag_list.map &:downcase
   end
 
   def to_html
