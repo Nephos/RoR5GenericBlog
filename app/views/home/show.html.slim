@@ -1,5 +1,5 @@
 .row.post
-  = render partial: "home/edit_button"
+  = render partial: "home/edit_button", locals: {post: @post}
   .post-id[id=@post.id]
     h1.post-title= @post.title
     span.small.post-meta
@@ -8,4 +8,4 @@
   .container-fluid
     .post-description= @post.to_html
     .post-tags= tag_list_links @post
-  = render partial: "home/edit_button"
+  = render partial: "home/edit_button", locals: {post: @post}
