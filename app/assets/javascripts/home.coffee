@@ -38,4 +38,6 @@ enable_edition_mode = ->
         document.edition = false
 
 $ ->
+  document.addEventListener "turbolinks:load", ->
+    enable_edition_mode()
   enable_edition_mode()
