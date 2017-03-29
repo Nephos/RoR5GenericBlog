@@ -7,6 +7,10 @@ class HomeController < ApplicationController
     if params[:tag]
       @posts = @posts.tagged_with([params[:tag]], any: true)
     end
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def show

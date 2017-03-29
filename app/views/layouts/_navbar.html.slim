@@ -9,5 +9,6 @@
       ul.nav.navbar-nav
         li = link_to "Home", root_path
         li = link_to "Last post", last_path
+        li = link_to "RSS", home_path(format: :rss)
         - if user_signed_in?
           li = link_to "Posts", posts_path
