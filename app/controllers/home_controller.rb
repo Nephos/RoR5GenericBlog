@@ -3,12 +3,14 @@ class HomeController < ApplicationController
   before_action :set_posts, only: [:index, :show, :last]
 
   def index
-    @posts = @posts.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @page = (params[:page] || 1).to_i
+    @posts = @posts.paginate(page: @page, per_page: 10).order(created_at: :desc)
     if params[:tag]
       @posts = @posts.tagged_with([params[:tag]], any: true)
     end
     respond_to do |format|
       format.html
+      format.json
       format.rss { render :layout => false }
     end
   end
