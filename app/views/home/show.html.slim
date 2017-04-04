@@ -8,4 +8,8 @@
   .container-fluid
     .post-description= @post.to_html
     .post-tags= tag_list_links @post
+    .post-format
+      = link_to "PDF", read_path(@post, format: :pdf), class: "btn btn-default btn-xs"
+      = link_to "LATEX", read_path(@post, format: :tex), class: "btn btn-default btn-xs"
+      = link_to "MARKDOWN", read_path(@post, format: :md), class: "btn btn-default btn-xs"
   = render partial: "home/edit_button", locals: {post: @post}
