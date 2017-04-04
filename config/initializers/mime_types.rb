@@ -6,3 +6,4 @@
 Mime::Type.register "application/pdf", :pdf
 Mime::Type.register "text/plain", :tex
 Mime::Type.register "text/plain", :md
+Mime::Type.register "text/plain", :bib

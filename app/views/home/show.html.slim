@@ -12,4 +12,5 @@
       = link_to "PDF", read_path(@post, format: :pdf), class: "btn btn-default btn-xs"
       = link_to "LATEX", read_path(@post, format: :tex), class: "btn btn-default btn-xs"
       = link_to "MARKDOWN", read_path(@post, format: :md), class: "btn btn-default btn-xs"
+      = link_to "BIBTEX", read_path(@post, format: :bib), class: "btn btn-default btn-xs"
   = render partial: "home/edit_button", locals: {post: @post}

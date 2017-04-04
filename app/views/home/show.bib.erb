@@ -1,0 +1,7 @@
+@online{
+  title={{ <%= @post.title.gsub('_', '\_') %> }},
+  year={{ <%= @post.updated_at.year %> }},
+  month={{ <%= @post.updated_at.month %> }},
+  day={{ <%= @post.updated_at.day %> }},
+  url={{ <%= read_url(@post, format: :pdf) %> }},
+}
