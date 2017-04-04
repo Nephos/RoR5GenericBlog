@@ -1,5 +1,6 @@
-title: "kent.ac.fr"
-sidebar: "My blog with lot of courses"
-picture: "/blog.jpg" # to put in /public/
-footer: "© Nephos 2017"
-description: "A blog about me and my studies at the University of Kent"
+title:        "kent.ac.fr"
+sidebar:      "My blog with lot of courses"
+picture:      "/blog.jpg" # to put in /public/
+footer:       "© Nephos 2017"
+description:  "A blog about me and my studies at the University of Kent"
+author:       "Arthur Poulet"

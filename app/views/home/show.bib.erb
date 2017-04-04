@@ -1,5 +1,6 @@
 @online{
   title={{ <%= @post.title.gsub('_', '\_') %> }},
+  author={{ <%= ENV["BLOG_AUTHOR"] %> }},
   year={{ <%= @post.updated_at.year %> }},
   month={{ <%= @post.updated_at.month %> }},
   day={{ <%= @post.updated_at.day %> }},
