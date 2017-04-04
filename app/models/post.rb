@@ -23,6 +23,19 @@ class Post < ApplicationRecord
     MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first.to_s).html_safe
   end
 
+  def pandoc!(format=:tex)
+    f = Tempfile.open
+    f.puts "%#{self.title}\n#{self.description}"
+    f.flush
+
+    o = Tempfile.open
+    output_path = "#{o.path}.#{format}"
+    `pandoc #{f.path} --standalone -o #{output_path}`
+    data = File.open(output_path).read
+    File.unlink(output_path)
+    data
+  end
+
   def duration
     (words / 300.0).ceil
   end
