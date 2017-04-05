@@ -1,3 +1,5 @@
-<!-- Title: <%=  + @post.title %> -->
+<!-- Title: <%= @post.title %> -->
+<!-- Author: <%= ENV['BLOG_AUTHOR'] %> -->
+<!-- Date: <%= @post.updated_at %> -->
 
 <%= @post.clean_description %>
