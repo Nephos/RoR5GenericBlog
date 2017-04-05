@@ -15,17 +15,21 @@ class Post < ApplicationRecord
     end
   end
 
+  def clean_description
+    self.description.gsub(/\r?\n~~~+\r?\n/, '')
+  end
+
   def to_html
-    MARKDOWN.render(self.description).html_safe
+    MARKDOWN.render(self.clean_description).html_safe
   end
 
   def to_short_html
-    MARKDOWN.render(self.description.split(/\r?\n---+\r?\n/).first.to_s).html_safe
+    MARKDOWN.render(self.description.split(/\r?\n~~~+\r?\n/).first.to_s).html_safe
   end
 
   def pandoc!(format=:tex)
     f = Tempfile.open
-    f.puts "%#{self.title}\n#{self.description}"
+    f.puts "%#{self.title}\n%#{ENV['BLOG_AUTHOR']}\n%\\today\n#{self.clean_description}"
     f.flush
 
     o = Tempfile.open

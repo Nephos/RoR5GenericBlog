@@ -30,3 +30,7 @@
     /read/:id.pdf
     /read/:id.md
     /last               # fetch the last published article
+
+## Write your blog
+
+In the article, write markdown. You can use "~~~" in order to have a short and long version of the article (the short version is presented in the home index of the article)
