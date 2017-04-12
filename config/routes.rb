@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   get '/read' => 'home#index', as: :home
   get '/read/:id' => 'home#show', as: :read
   get '/last' => 'home#last', as: :last

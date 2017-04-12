@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :last]
   before_action :set_posts, only: [:index, :show, :last]
 
+  api :GET, "/read(.:format)", "List the last article (by creation date)"
+  param :page, :number, required: false
+  param :format, %w(html json rss), required: false
+  formats %w(html json rss)
   def index
     @page = (params[:page] || 1).to_i
     @posts = @posts.paginate(page: @page, per_page: 10).order(created_at: :desc)
@@ -15,6 +19,10 @@ class HomeController < ApplicationController
     end
   end
 
+  api :GET, "/read/:id(.:format)", "Get an existing article"
+  param :id, :number, required: true
+  param :format, %w(html json md(markdown) tex(latex) bib(bibtex) pdf), required: false
+  formats %w(html json md tex bib pdf)
   def show
     @post = @posts.find_by(id: params[:id])
     render file: "#{Rails.root}/public/404.html" , status: 404  if @post.nil?
@@ -28,6 +36,8 @@ class HomeController < ApplicationController
     end
   end
 
+  api :GET, "/last", "Get the last article"
+  description "Note: This entry point does not keep the format"
   def last
     if @posts.count.zero?
       redirect_to home_path, alert: "No readable post"

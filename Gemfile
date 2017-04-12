@@ -73,3 +73,4 @@ gem 'will_paginate', github: 'jonatack/will_paginate'
 
 ## Tags for posts
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'apipie-rails'
