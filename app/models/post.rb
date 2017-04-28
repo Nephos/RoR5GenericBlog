@@ -29,7 +29,7 @@ class Post < ApplicationRecord
 
   def pandoc!(format=:tex)
     f = Tempfile.open
-    f.puts "%#{self.title}\n%#{ENV['BLOG_AUTHOR']}\n%\\today\n#{self.clean_description}"
+    f.puts "%#{self.title} \\newline \\small{(#{self.duration} minutes reading, #{self.words} words)} \n%#{ENV['BLOG_AUTHOR']}\n%\\today\n#{self.clean_description}"
     f.flush
 
     o = Tempfile.open
