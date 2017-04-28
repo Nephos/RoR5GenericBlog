@@ -21,8 +21,8 @@ class HomeController < ApplicationController
 
   api :GET, "/read/:id(.:format)", "Get an existing article"
   param :id, :number, required: true
-  param :format, %w(html json md(markdown) tex(latex) bib(bibtex) pdf), required: false
-  formats %w(html json md tex bib pdf)
+  param :format, %w(html json md tex bib pdf), required: false
+  formats %w(html json md(markdown) tex(latex) bib(bibtex) pdf)
   def show
     @post = @posts.find_by(id: params[:id])
     render file: "#{Rails.root}/public/404.html" , status: 404  if @post.nil?
