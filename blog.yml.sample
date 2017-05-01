@@ -4,3 +4,4 @@ picture:      "/blog.jpg" # to put in /public/
 footer:       "© Nephos 2017"
 description:  "A blog about me and my studies at the University of Kent"
 author:       "Arthur Poulet"
+keywords:     "network security, system security"
