@@ -1,3 +1,123 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-create {
+    margin: 0px 0px 20px 0px;
+}
+
+.post-pagination {
+    margin: 0px 0px 40px 0px;
+}
+
+.post-index {
+    max-width: 600px;
+}
+
+.post {
+    margin: 0px 0px 80px 0px;
+    word-wrap: break-word;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid #eee;
+}
+
+.post-title {
+    font-size: 24px;
+}
+
+.post-state {
+    color: black !important;
+    font-size: 16px;
+}
+
+.post-title a {
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-meta {
+}
+
+.post-words {
+    color: grey;
+    float: left;
+}
+
+.post-words:after {
+    content: " reading";
+}
+
+.post-date {
+    color: grey;
+    float: right;
+}
+
+.post-description {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.post-description {
+    margin-top: 60px;
+    color: #555555 !important;
+}
+
+.post textarea, .post input {
+    overflow: hidden;
+    width: 100%;
+    // font-size: 14px;
+    outline: none;
+    display: block;
+    border-radius: 4px;
+    border: 4px solid #556677;
+}
+
+.post-title input {
+    padding: 4px;
+    margin: 10px auto;
+}
+
+.post-description textarea {
+    padding: 10px;
+    margin: 50px auto;
+    resize: vertical;
+    max-height: 50%;
+}
+
+.post-tags, .post-more {
+    margin-left: 20px;
+}
+
+.post-tags {
+    margin-bottom: 20px;
+    float: right;
+}
+
+.post-more {
+    background-color: white;
+    color: black;
+    border: 2px solid #556677;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.post-more:hover {
+    background-color: #556677;
+    color: white;
+    text-decoration: none;
+}
+
+a.label:visited, #post-create:visited {
+    color: white;
+}
+

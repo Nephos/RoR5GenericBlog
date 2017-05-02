@@ -8,10 +8,12 @@ class HomeController < ApplicationController
   formats %w(html json rss)
   def index
     @page = (params[:page] || 1).to_i
-    @posts = @posts.paginate(page: @page, per_page: 10).order(created_at: :desc)
     if params[:tag]
       @posts = @posts.tagged_with([params[:tag]], any: true)
     end
+    @posts_count = @posts.size
+    @posts = @posts.paginate(page: @page, per_page: 10).order(created_at: :desc)
+    # @posts_count_current = @posts.size
     respond_to do |format|
       format.html
       format.json
