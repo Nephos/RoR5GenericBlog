@@ -17,7 +17,7 @@
 }
 
 .apple_pagination .disabled, .count-posts p {
-    color: #aaaaaa;
+    color: #4579ae;
 }
 
 .apple_pagination .current {
@@ -33,13 +33,13 @@
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
     border-radius: 1em;
-    background-color: #bebebe;
+    background-color: #90b0d0;
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
 }
 
-.apple_pagination a, .apple_pagination a:hover, .apple_pagination a:focus {
+.apple_pagination .current, .apple_pagination a, .apple_pagination a:hover, .apple_pagination a:focus {
     text-decoration: none;
-    color: black;
+    color: #35597e;
 }
 
 .apple_pagination a:hover, .apple_pagination a:focus {

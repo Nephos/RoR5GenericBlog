@@ -29,6 +29,8 @@
 
 .post-title {
     font-size: 24px;
+    color: black;
+    /* color: #35597e; */
 }
 
 .post-state {
@@ -72,7 +74,6 @@
 
 .post-description {
     margin-top: 60px;
-    color: #555555 !important;
 }
 
 .post-tags, .post-more {
@@ -84,10 +85,15 @@
     float: right;
 }
 
+.post-tags .label {
+    background-color: #90b0d0;
+}
+
 .post-more {
+    margin-top: 10px;
     background-color: white;
-    color: black;
-    border: 2px solid #556677;
+    color: #4579ae;
+    border: 2px solid #4579ae;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -96,12 +102,12 @@
 }
 
 .post-more:hover {
-    background-color: #556677;
+    background-color: #4579ae;
     color: white;
     text-decoration: none;
 }
 
-a.label:visited, #post-create:visited {
+.post a.label:visited, #post-create:visited {
     color: white;
 }
 
@@ -133,6 +139,11 @@ a.label:visited, #post-create:visited {
 /* ********************** */
 /*** Post body markdown ***/
 /* ********************** */
+.post-description {
+    color: #555555 !important;
+    /* color: #35597e !important; */
+}
+
 .post-description ul {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 2.5em;
