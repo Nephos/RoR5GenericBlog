@@ -1,5 +1,5 @@
 .row.post
-  = render partial: "home/edit_button", locals: {post: @post}
+  = render partial: "home/edit_buttons", locals: {post: @post}
   .post-id[id=@post.id]
     h1.post-title= @post.title
     span.small.post-meta
@@ -16,4 +16,4 @@
       = link_to "MARKDOWN", read_path(@post, format: :md), class: "label label-success", id: "label-to-md", title: "Get it in markdown / text format."
       | 
       = link_to "BIBTEX", read_path(@post, format: :bib), class: "label label-success", id: "label-to-bibtex", title: "Get the citation in bibtex format."
-  = render partial: "home/edit_button", locals: {post: @post}
+  = render partial: "home/edit_buttons", locals: {post: @post}

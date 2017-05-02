@@ -7,7 +7,7 @@
 
   - @posts.each do |post|
     .row.post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
-      = render partial: "home/edit_button", locals: {post: post}
+      = render partial: "home/edit_buttons", locals: {post: post}
       .post-id[id=post.id]
         h1.post-title
           = link_to post.title, read_path(post)

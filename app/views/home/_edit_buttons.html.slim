@@ -1,0 +1,8 @@
+/ requires locals: {post: ...}
+- if user_signed_in?
+  .row.post-edit-buttons
+    .btn-group.btn-group-justified[role="group"]
+      = link_to "Update", edit_post_path(post), class: "btn btn-warning btn-xs post-edit"
+      = link_to "Destroy", destroy_path(post), method: "DELETE", class: "btn btn-danger btn-xs post-destroy"
+      = link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_post_path(post), :class => 'btn btn-default btn-xs'

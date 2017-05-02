@@ -14,7 +14,7 @@ enable_edition_mode = ->
   document.edition = false
   $(document).on "click", ".post-edit", (e) ->
     e.preventDefault()
-    post = $(this).parent().parent()
+    post = $(this).parent().parent().parent()
     id = $(".post-id", post).attr("id")
     if document.edition == false
       get_post id, (data_post) ->
