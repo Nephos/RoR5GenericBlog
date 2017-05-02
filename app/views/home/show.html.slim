@@ -9,8 +9,11 @@
     .post-description= @post.to_html
     .post-tags= tag_list_links @post
     .post-format
-      = link_to "PDF", read_path(@post, format: :pdf), class: "btn btn-default btn-xs"
-      = link_to "LATEX", read_path(@post, format: :tex), class: "btn btn-default btn-xs"
-      = link_to "MARKDOWN", read_path(@post, format: :md), class: "btn btn-default btn-xs"
-      = link_to "BIBTEX", read_path(@post, format: :bib), class: "btn btn-default btn-xs"
+      = link_to "PDF", read_path(@post, format: :pdf), class: "label label-info", id: "label-to-pdf", title: "Please do not abuse this option (it is heavy for the server)."
+      | 
+      = link_to "LATEX", read_path(@post, format: :tex), class: "label label-info", id: "label-to-latex", title: "Please do not abuse this option (it is heavy for the server)."
+      | 
+      = link_to "MARKDOWN", read_path(@post, format: :md), class: "label label-success", id: "label-to-md", title: "Get it in markdown / text format."
+      | 
+      = link_to "BIBTEX", read_path(@post, format: :bib), class: "label label-success", id: "label-to-bibtex", title: "Get the citation in bibtex format."
   = render partial: "home/edit_button", locals: {post: @post}
