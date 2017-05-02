@@ -3,15 +3,7 @@
     .row.post-create
       = link_to "Create a new post", create_path, method: "post", class: "btn btn-success btn-sm center-block", id: "post-create"
 
-  .row.post-pagination.will_paginate
-    .count-posts
-      p
-        / | #{@posts_count_current} / #{@posts_count} posts found / TODO
-        | #{@posts_count} posts found
-    .pagination-posts.apple_pagination
-      /= will_paginate @posts, renderer: BootstrapPagination::Rails
-      = will_paginate @posts
-
+  = render partial: "pagination"
 
   - @posts.each do |post|
     .row.post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
@@ -29,4 +21,4 @@
           - if post.to_html.size > post.to_short_html.size
             a.post-more[href=read_path(post)] read more
 
-  = will_paginate @posts, renderer: BootstrapPagination::Rails
+  = render partial: "pagination"
