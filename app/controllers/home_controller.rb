@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     end
     @posts_count = @posts.size
     @posts = @posts.paginate(page: @page, per_page: 10).order(created_at: :desc)
-    # @posts_count_current = @posts.size
+    # @posts_count_current = @posts.size # TODO
     respond_to do |format|
       format.html
       format.json
