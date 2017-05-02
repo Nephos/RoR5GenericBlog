@@ -31,3 +31,7 @@ body {
         display: none !important;
     }
 }
+
+a.label:visited {
+    color: white;
+}
