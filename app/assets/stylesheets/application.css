@@ -15,12 +15,14 @@
  */
 
 body {
-    padding-top: 40px;
+    padding-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 40px;
+        padding-top: 10px;
     }
 
     .well {
@@ -30,4 +32,8 @@ body {
     .sidebar-nav {
         display: none !important;
     }
+}
+
+.container {
+    max-width: 640px;
 }

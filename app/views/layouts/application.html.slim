@@ -18,19 +18,11 @@ html[lang="en"]
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
   body
-    = render partial: "layouts/navbar"
     .container
-      .row
-        .col-lg-12
-          = bootstrap_flash
-          = yield
-        / .col-lg-3
-        /   .well.sidebar-nav
-        /     h3= ENV["BLOG_TITLE"]
-        /     .nav
-        /       - if ENV["BLOG_PICTURE"]
-        /         img.img-thumbnail[src=ENV["BLOG_PICTURE"] alt="blog picture"]
-        /       div= ENV["BLOG_SIDEBAR"].to_s.html_safe
-
+      = render partial: "layouts/navbar"
+    .container
+      = bootstrap_flash
+      = yield
+    .container
       footer
         p= ENV["BLOG_FOOTER"].to_s.html_safe

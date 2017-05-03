@@ -1,0 +1,51 @@
+
+.nav .active {
+    color: #fff;
+}
+
+.navbar {
+    background-color: #428bca;
+    min-height: 0px;
+    height: none;
+}
+
+nav.navbar-nav {
+    margin: 0px;
+}
+
+.nav-item:hover {
+    background-color: #428bca;
+}
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.nav-item, .nav-item:visited {
+    color: #cdddeb;
+}
+
+.nav-item:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    color: #428bca;
+
+    &:visited {
+        color: #428bca;
+    }
+
+    &:active {
+        color: #428bca;
+    }
+
+    &:hover {
+        color: #8d9dab;
+    }
+}
+

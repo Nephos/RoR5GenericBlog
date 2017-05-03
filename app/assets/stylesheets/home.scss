@@ -17,11 +17,11 @@
 }
 
 .post-index {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0px;
+    // max-width: 600px;
+    // margin-left: auto;
+    // margin-right: auto;
 }
-
 .post {
     margin: 0px 0px 80px 0px;
     word-wrap: break-word;
@@ -42,13 +42,13 @@
 
 .post-title a {
     background-color: inherit;
-    color: inherit;
+    color: black !important;
     text-decoration: none;
 }
 
 .post-title a:hover {
     background-color: inherit;
-    color: inherit;
+    color: black !important;
     text-decoration: none;
 }
 
@@ -155,9 +155,3 @@
     /* padding: 0px 0px 0px 0px; */
     margin: 0.6em 0.4em 1.4em 0.8em;
 }
-
-/* .post-description h3, .post-description h4, .post-description h5, .post-description h6 { */
-/*     /\* padding: 0px 0px 0px 0px; *\/ */
-/*     /\* margin-top: 0.8em; *\/ */
-/*     /\* margin-bottom: 0.3em; *\/ */
-/* } */
