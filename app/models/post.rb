@@ -27,6 +27,15 @@ class Post < ApplicationRecord
     MARKDOWN.render(self.description.split(/\r?\n~~~+\r?\n/).first.to_s).html_safe
   end
 
+  # If it is likely to display short by default
+  def short!
+    @short = true
+  end
+
+  def short?
+    @short == true
+  end
+
   def pandoc!(format=:tex)
     f = Tempfile.open
     f.puts "%#{self.title} \\newline \\small{(#{self.duration} minutes reading, #{self.words} words)} \n%#{ENV['BLOG_AUTHOR']}\n%\\today\n#{self.clean_description}"

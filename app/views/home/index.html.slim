@@ -6,18 +6,6 @@
   = render partial: "pagination"
 
   - @posts.each do |post|
-    .post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
-      = render partial: "home/edit_buttons", locals: {post: post}
-      .post-id[id=post.id]
-        h1.post-title
-          = link_to post.title, read_path(post)
-          = link_to " [#{post.state}] ", publish_path(post), method: "PATCH", class: "post-state post-draft" if post.state == "draft"
-        span.small.post-meta
-          span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? 's' : ''}"
-          span.post-date= post.date.join(" ")
-        .post-description= post.to_short_html
-        .post-tags= tag_list_links post
-        - if post.to_html.size > post.to_short_html.size
-          a.post-more[href=read_path(post)] read more
+    = render partial: "show", locals: {post: post, short: true}
 
   = render partial: "pagination"

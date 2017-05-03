@@ -29,7 +29,7 @@ class HomeController < ApplicationController
     @post = @posts.find_by(id: params[:id])
     render file: "#{Rails.root}/public/404.html" , status: 404  if @post.nil?
     respond_to do |format|
-      format.html
+      format.html { render layout: false if request.xhr? }
       format.json
       format.md
       format.tex
@@ -50,8 +50,13 @@ class HomeController < ApplicationController
 
   def update
     @post = Post.find params[:id]
+    @post.short! if params[:short] == "true" # only "true" ? "1" ?
     if @post.update(post_params)
-      render :show, status: :ok, location: read_path(@post)
+      if request.xhr?
+        render :show, layout: false
+      else
+        render :show, status: :ok, location: read_path(@post)
+      end
     else
       render json: @post.errors, status: :unprocessable_entity
     end

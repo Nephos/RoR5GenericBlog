@@ -7,7 +7,7 @@ get_post = (id, callback) ->
     callback(data)
 
 update_post = (id, title, description, tags, callback) ->
-  $.ajax type: "PATCH", url: "/update/#{id}.json", data: {post: {title: title, description: description, tag_list: tags}}, success: (data, status, _)->
+  $.ajax type: "PATCH", url: "/update/#{id}", data: {short: $(".post-edit-long")[0] == undefined, post: {title: title, description: description, tag_list: tags}}, success: (data, status, _)->
     callback(data)
 
 enable_edition_mode = ->
@@ -31,11 +31,7 @@ enable_edition_mode = ->
       description = $(".post-description textarea", post).val()
       tag_list = $(".post-tags input", post).val()
       update_post id, title, description, tag_list, (data_post) ->
-        $(".post-title", post).html("<h1 class=\"post-title\">" + data_post.title + "</h1>")
-        $(".post-description", post).html("<div>" + data_post.to_html + "</div>")
-        build_tag_html = (tag) ->
-          "<a class=\"label label-default\" href=\"/?tag=#{tag}\">#{tag}</a>"
-        $(".post-tags", post).html(data_post.tags.map((t) -> build_tag_html(t)).join(" "))
+        post.replaceWith(data_post)
         document.edition = false
 
 $ ->
