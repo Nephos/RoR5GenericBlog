@@ -1,12 +1,12 @@
 .post-index
   - if user_signed_in?
-    .row.post-create
+    .post-create
       = link_to "Create a new post", create_path, method: "post", class: "btn btn-success btn-sm center-block", id: "post-create"
 
   = render partial: "pagination"
 
   - @posts.each do |post|
-    .row.post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
+    .post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
       = render partial: "home/edit_buttons", locals: {post: post}
       .post-id[id=post.id]
         h1.post-title
@@ -15,10 +15,9 @@
         span.small.post-meta
           span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? 's' : ''}"
           span.post-date= post.date.join(" ")
-        .CZEIJ
-          .post-description= post.to_short_html
-          .post-tags= tag_list_links post
-          - if post.to_html.size > post.to_short_html.size
-            a.post-more[href=read_path(post)] read more
+        .post-description= post.to_short_html
+        .post-tags= tag_list_links post
+        - if post.to_html.size > post.to_short_html.size
+          a.post-more[href=read_path(post)] read more
 
   = render partial: "pagination"
