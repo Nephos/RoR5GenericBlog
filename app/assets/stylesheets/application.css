@@ -20,6 +20,10 @@ body {
     margin-right: 0px;
 }
 
+body, p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 @media screen and (max-width: 768px) {
     body {
         padding-top: 10px;
@@ -36,4 +40,8 @@ body {
 
 .container {
     max-width: 640px;
+}
+
+.label, .btn {
+    font-family: Monospace;
 }
