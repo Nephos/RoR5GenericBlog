@@ -21,3 +21,4 @@
       = link_to "BIBTEX", read_path(post, format: :bib), class: "label label-success", id: "label-to-bibtex", title: "Get the citation in bibtex format."
     - if short && post.to_html.size > post.to_short_html.size
       a.post-more[href=read_path(post)] read more
+  = render partial: "home/edit_buttons", locals: {post: post, short: short}
