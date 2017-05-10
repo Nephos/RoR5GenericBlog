@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   before_save do
     self.description = self.description.to_s
     self.words = self.description.split(/[[:alnum:]]+/).size
-    self.tag_list = self.tag_list.map &:downcase
+    self.tag_list = self.tag_list.map(&:downcase).sort
     unless STATES.include? self.state
       self.state = DEFAULT_STATE
     end
