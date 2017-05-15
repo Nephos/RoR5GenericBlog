@@ -90,16 +90,26 @@
         max-width: 50%;
     }
 
+    .post-more-container {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
     .post-more {
-        margin-top: 10px;
+        margin: 40px 0px 0px 0px;
         background-color: white;
         color: #4579ae;
         border: 2px solid #4579ae;
-        padding: 10px 20px;
+        padding: 12px 24px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        position: relative;
+        font-size: 18px;
         &:hover {
             background-color: #4579ae;
             color: white;
