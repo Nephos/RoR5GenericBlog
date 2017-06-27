@@ -23,10 +23,19 @@
     // margin-right: auto;
 }
 
+.post-index .post:first-child {
+    margin-bottom: 80px !important;
+}
+
+.post-index .post:not(:first-child) {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
 .post {
-    margin: 0px 0px 80px 0px;
+    margin: 8px;
     word-wrap: break-word;
-    padding: 0px 0px 40px 0px;
+    padding: 0px 0px 0px 0px;
     border-bottom: 4px dashed #90b0d066;
 
     .post-title {
@@ -73,8 +82,6 @@
     .post-description {
         text-align: justify;
         text-justify: inter-word;
-        margin-top: 60px;
-        margin-bottom: 20px;
     }
 
     .post-tags, .post-more {
@@ -103,11 +110,11 @@
     }
 
     .post-more {
-        margin: 40px 0px 0px 0px;
+        margin: 10px 0px 0px 0px;
         background-color: white;
         color: #4579ae;
         border: 2px solid #4579ae;
-        padding: 12px 24px;
+        padding: 16px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

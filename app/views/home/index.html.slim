@@ -7,5 +7,7 @@
 
   - @posts.each do |post|
     = render partial: "show", locals: {post: post, short: true}
+    - if post != @posts.last
+      hr
 
   = render partial: "pagination"
