@@ -9,10 +9,10 @@ article.post[class="#{post.state == 'draft' ? 'bg-warning' : ''}"]
     span.small.post-meta
       span.post-words= "~ #{post.duration} minute#{post.duration > 1 ? 's' : ''}"
       span.post-date= post.date.join(" ")
-    - if post.image
       .text-center
         figure
-          = image_tag post.image, alt: "Illustration of \"#{post.title}\"", width: 360, class: "img-rounded post-img"
+          .post-img
+            = image_tag post.image.to_s.strip == "" ? "/" : post.image, alt: "Illustration of \"#{post.title}\"", width: 360, class: "img-rounded"
     section.post-description= short ? post.to_short_html : post.to_html
     .post-tags= tag_list_links post
     .post-format
