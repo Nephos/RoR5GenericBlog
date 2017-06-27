@@ -25,8 +25,12 @@ dl.dl-horizontal
     strong
       = model_class.human_attribute_name(:state)
       | :
+  dt
+    strong
+      = model_class.human_attribute_name(:image)
+      | :
   dd
-    = @post.state
+    = image_tag @post.image, alt: "Illustration of \"#{@post.image}\""
   dt
     strong
       = model_class.human_attribute_name(:tag_list)

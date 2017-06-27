@@ -7,6 +7,7 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.title
+        xml.image post.image if post.image
         xml.description post.to_short_html
         xml.pubDate post.updated_at.to_s(:rfc822)
         xml.link read_url(post)
