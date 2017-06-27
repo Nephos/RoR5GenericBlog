@@ -5,7 +5,8 @@
 
   = render partial: "pagination"
 
-  - @posts.each do |post|
-    = render partial: "show", locals: {post: post, short: true}
+  section
+    - @posts.each do |post|
+      = render partial: "show", locals: {post: post, short: true}
 
   = render partial: "pagination"
