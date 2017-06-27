@@ -18,25 +18,26 @@
 
 .post-index {
     padding: 0px;
-    // max-width: 600px;
-    // margin-left: auto;
-    // margin-right: auto;
+
+    hr {
+        border-width: 3px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
 
-.post-index .post:first-child {
-    margin-bottom: 80px !important;
-}
+/* .post-index .post:not(:last-child) { */
+/*     margin-top: 40px !important; */
+/* } */
 
-.post-index .post:not(:first-child) {
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
-}
+/* .post-index .post:not(:first-child) { */
+/*     margin-bottom: 40px !important; */
+/* } */
 
 .post {
     margin: 8px;
     word-wrap: break-word;
     padding: 0px 0px 0px 0px;
-    border-bottom: 4px dashed #90b0d066;
 
     .post-title {
         font-size: 24px;
