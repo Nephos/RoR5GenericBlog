@@ -12,9 +12,8 @@ class Post < ApplicationRecord
     self.description = self.description.to_s
     self.words = self.description.to_s.split(/[[:alnum:]]+/).size
     self.tag_list = self.tag_list.map(&:downcase).sort
-    unless STATES.include? self.state
-      self.state = DEFAULT_STATE
-    end
+    self.state = DEFAULT_STATE unless STATES.include? self.state
+    self.created_at = Time.now if self.state_was == DEFAULT_STATE
   end
 
   def clean_description
