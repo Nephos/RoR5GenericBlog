@@ -7,10 +7,10 @@ class Post < ApplicationRecord
   DEFAULT_STATE = "draft"
   STATES = %(draft published)
   before_save do
-    self.subtitle = nil if self.subtitle.strip.empty?
-    self.image = nil if self.image.strip.empty?
+    self.subtitle = nil if self.subtitle.to_s.strip.empty?
+    self.image = nil if self.image.to_s.strip.empty?
     self.description = self.description.to_s
-    self.words = self.description.split(/[[:alnum:]]+/).size
+    self.words = self.description.to_s.split(/[[:alnum:]]+/).size
     self.tag_list = self.tag_list.map(&:downcase).sort
     unless STATES.include? self.state
       self.state = DEFAULT_STATE
