@@ -82,7 +82,7 @@ class HomeController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :state, :image, :tag_list)
+    params.require(:post).permit(:title, :subtitle, :description, :state, :image, :tag_list)
   end
 
   def set_posts

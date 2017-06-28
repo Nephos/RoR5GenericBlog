@@ -11,6 +11,12 @@ dl.dl-horizontal
     = @post.title
   dt
     strong
+      = model_class.human_attribute_name(:subtitle)
+      | :
+  dd
+    = @post.subtitle
+  dt
+    strong
       = model_class.human_attribute_name(:description)
       | :
   dd
