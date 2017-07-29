@@ -62,6 +62,7 @@ gem 'devise'
 ## Templating
 gem 'slim'
 gem 'redcarpet'
+gem 'rouge'
 
 ## CSS
 gem 'twitter-bootstrap-rails', '>= 2.2.6'
